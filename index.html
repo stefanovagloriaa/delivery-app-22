@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/site.css">
+    <script src="/app.js" type="module"></script>
+    <script type="text/javascript" src="https://npmcdn.com/parse/dist/parse.min.js"></script>
+    <title>Fresh and Tasty</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="topnav" id="topnav">
+                <a href="/">Restaurants</a>
+                <div id="guest">
+                    <a class="menu" href="/login">Login</a>
+                    <a class="menu" href="/register">Register</a>
+                </div>
+                <div id="loggedUser">
+                    <a class="menu" href="/myDeliveries">My Deliveries</a>
+                    <a class="menu" href="/logout">Logout</a>
+                    <a class="menu" href="/myShoppingCard" id="makeOrder">Make your order!</a>
+                    <a class="menu" href="/myProfile" id="profile">Profile</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section id="notificationContainer">
+
+    </section>
+
+    <main id="container">
+
+    </main>
+
+    <footer>
+        <nav class="footerNav">
+            <div>
+                <div>
+                    <a href="#">About us</a>
+                </div>
+                <div>
+                    <a href="/register">Create account</a>
+                </div>
+                <div>
+                    <a href="/login">Log in</a>
+                </div>
+                <div>
+                    <a href="#">Register your restaurant</a>
+                </div>
+                <div>
+                    <a href="/myDeliveries">View your orders</a>
+                </div>
+            </div>
+        </nav>
+    </footer>
+
+</body>
+<script>
+    //var Parse = require('parse/node');
+    Parse.initialize("71ASnfdK1ruTRDS5SN12nX8BiQy2gzQbXRyIZ53x", "l413st0OuiD2ShC6KfmdNIsQX6CgboZeQ0FAZm15"); //PASTE HERE YOUR Back4App APPLICATION ID AND YOUR JavaScript KEY
+    Parse.serverURL = "https://parseapi.back4app.com/";
+</script>
+
+</html>

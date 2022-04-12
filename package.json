@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "firebase": "^9.6.10",
+    "lit-html": "^2.2.1",
+    "page": "^1.11.6",
+    "parse": "^3.4.1"
+  }
+}
