@@ -2,6 +2,7 @@
 .topnav {
   background-color: WHITE;
   overflow: hidden;
+  font-family: Candara, sans-serif;
 }
 
 /* Style the links inside the navigation bar */
@@ -12,6 +13,7 @@
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
+  font-family: Candara, sans-serif;
 }
 
 /* Change the color of links on hover */
@@ -30,6 +32,7 @@
 form>div {
   margin: auto;
   text-align: left;
+  font-family: Candara, sans-serif;
 }
 
 /* Full-width inputs */
@@ -42,6 +45,7 @@ input[type=password] {
   display: inline-block;
   border: 1px solid #ccc;
   box-sizing: border-box;
+  font-family: Candara, sans-serif;
 }
 
 /* Set a style for all buttons */
@@ -54,6 +58,7 @@ button {
   cursor: pointer;
   width: 25%;
   border-radius: 30px;
+  font-family: Candara, sans-serif;
 }
 
 /* Add a hover effect for buttons */
@@ -68,22 +73,25 @@ button:hover {
   margin-left: 300px;
   margin-right: 300px;
   margin-top: 0px;
+  font-family: Candara, sans-serif;
 }
 
 #makeOrder {
   position: relative;
   float: right;
   right: 30px;
+  font-family: Candara, sans-serif;
 }
 
 #profile {
   position: relative;
   float: right;
   right: 30px;
+  font-family: Candara, sans-serif;
 }
 
 #notification {
-  background-color: rgb(252, 246, 238);
+  background-color: rgb(247, 246, 243);
   position: fixed;
   float: right;
   right: 30px;
@@ -93,6 +101,7 @@ button:hover {
   width: 150px;
   height: 50px;
   text-align: center;
+  font-family: Candara, sans-serif;
 }
 
 #profileImage {
@@ -114,6 +123,7 @@ button:hover {
 
 #searchRestaurant {
   background-color: white;
+  font-family: Candara, sans-serif;
 }
 
 #welcomeMsg {
@@ -126,6 +136,7 @@ button:hover {
   padding-bottom: 2px;
   text-decoration: none;
   font-size: 17px;
+  font-family: Candara, sans-serif;
 }
 
 .column {
@@ -168,12 +179,22 @@ button:hover {
   padding: 4px;
   text-align: center;
   background-color: white;
+  font-family: Candara, sans-serif;
+  border-radius: 8%;
+}
+
+.card:hover {
+  opacity: 0.6;
+  background-color: rgb(239, 237, 233);
 }
 
 
 footer {
   background-color: white;
   overflow: hidden;
+  font-family: Candara, sans-serif;
+  height: 40%;
+  margin: 2% 2% 2% 2%;
 }
 
 .footerNav a {
@@ -186,4 +207,10 @@ footer {
 
 #container {
   min-height: 500px;
+}
+
+article,
+h2,
+p {
+  font-family: Candara, sans-serif;
 }

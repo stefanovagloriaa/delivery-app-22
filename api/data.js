@@ -46,3 +46,12 @@ export async function createRestaurant() {
 export async function updateUserProfile(userData, userId) {
     return await api.put('/users/' + userId, userData)
 }
+
+export async function createOrder(givenOrder) {
+     await api.post('/classes/Order', givenOrder);
+
+}
+
+export async function getOrderByUserId(urlParam){
+    return await api.get('/classes/Order');
+}

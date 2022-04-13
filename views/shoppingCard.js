@@ -1,7 +1,8 @@
 import {html} from '../node_modules/lit-html/lit-html.js';
 
 import {addDelivery} from './myDeliveries.js';
-import { createNotification } from './notification.js';
+import {createNotification} from './notification.js';
+import {createOrder} from '/api/data.js';
 
 const currentItems = [];
 
@@ -61,11 +62,32 @@ export async function shoppingCardPage(ctx){
         items.forEach(i=> {
             const itemName = i.children[0].textContent;
             const price = Number(i.children[1].textContent);
-     
-            orderItems.push({itemName,price});
+            const restaurant = sessionStorage.getItem('restaurant');
+            const restaurantId = sessionStorage.getItem('restaurantId');
+            const userId = sessionStorage.getItem('userId');
+
+            const givenOrder =  {
+                    "itemName": itemName,
+                    "itemPrice": price,
+                    "restaurantName": restaurant,
+                    "restaurantId": { 
+                        "__type": "Pointer", 
+                        "className": "Restaurant", 
+                        "objectId": restaurantId
+                    },
+                    "userId": { 
+                        "__type": "Pointer", 
+                        "className": "_User", 
+                        "objectId": userId
+                    }
+            };
+
+           createOrder(givenOrder);
+
+            //orderItems.push({itemName,price});
         });
      
-        addDelivery(orderItems);
+       // addDelivery(orderItems);
         createNotification('Your order has been submitted :)');
         ctx.render('No added products in the shopping card yet..', ctx.container);
         
@@ -77,5 +99,6 @@ export async function shoppingCardPage(ctx){
 
 export function addItemToShoppingCard(item){
     currentItems.push(item);
+   
 }
 

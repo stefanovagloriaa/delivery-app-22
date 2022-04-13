@@ -30,18 +30,20 @@ const restaurantTemplate = (restaurant, getMenu) => html`
     </div>
 `;
 
-const menuPageTemplate = (name, menu) => html`
-<h2 style="background-color: gray">Restaurant ${name}</h2>
-${menu}
+const menuPageTemplate = (name, menu, restaurantId) => html`
+    <h2 id="restaurantName">Restaurant ${name}</h2>
+    ${menu}
 `;
 
-const menuTemplate = (menuItem) => html`
+function menuTemplate(menuItem) {
+    return html`
 <article id="${menuItem.name}">
     <h2>${menuItem.name}</h2>
     <p>${menuItem.price}</p>
     <button @click=${addToBasket}>Order</button>
 </article>
 `;
+}
 
 export async function restaurantsPage(ctx) {
 
@@ -85,7 +87,9 @@ export async function restaurantsPage(ctx) {
         console.log(selectedRestaurant);
         const menu = selectedRestaurant[0].menu.map(m => menuTemplate(m));
         const restaurantName = selectedRestaurant[0].name;
-        console.log(restaurantName);
+        const restaurantId = selectedRestaurant[0].objectId;
+        sessionStorage.setItem('restaurantId', restaurantId);
+
         ctx.render(menuPageTemplate(restaurantName, menu), ctx.container);
     }
 };
@@ -93,7 +97,13 @@ export async function restaurantsPage(ctx) {
 function addToBasket(event) {
     const itemName = event.target.parentNode.children[0].textContent;
     const price = Number(event.target.parentNode.children[1].textContent);
+    const restaurantName = document.getElementById('restaurantName').textContent;
+    sessionStorage.setItem('restaurant', restaurantName);
+    const restaurantId =
 
+        console.log(restaurantName);
     createNotification('Item added to the shopping card');
+
+    console.log(restaurantName);
     addItemToShoppingCard({ itemName, price });
 }
