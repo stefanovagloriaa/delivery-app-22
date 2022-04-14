@@ -5,7 +5,6 @@ import { restaurantsPage } from '/views/restaurants.js'
 import { loginPage } from '/views/login.js';
 import { registerPage } from '/views/register.js';
 import { myDeliveriesPage } from '/views/myDeliveries.js';
-import { logoutUser } from '/views/logout.js';
 import { shoppingCardPage } from '/views/shoppingCard.js';
 import { profilePage } from '/views/myProfile.js';
 
@@ -13,14 +12,12 @@ const main = document.getElementById('container');
 const headerNav = document.getElementById('topnav');
 const guestNav = document.getElementById('guest');
 const userNav = document.getElementById('loggedUser');
-
-console.log(headerNav);
+const logoutBtn = document.getElementById('logoutBtn');
 
 page('/', attachComponents, restaurantsPage);
 page('/login', attachComponents, loginPage);
 page('/register', attachComponents, registerPage);
 page('/myDeliveries', attachComponents, myDeliveriesPage);
-page('/logout', logoutUser);
 page('/myShoppingCard', attachComponents, shoppingCardPage);
 page('/myProfile', attachComponents, profilePage)
 
@@ -50,4 +47,9 @@ headerNav.addEventListener('focusin', (ev) => {
 });
 headerNav.addEventListener('focusout', (ev) => {
     ev.target.classList.remove('active');
+});
+
+logoutBtn.addEventListener('click', () => {
+    sessionStorage.clear();
+    setupNavigation();
 });
